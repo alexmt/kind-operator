@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kind-controller-manager
+spec:
+  selector:
+    matchLabels:
+      app: kind-controller
+  template:
+    metadata:
+      labels:
+        app: kind-controller
+    spec:
+      containers:
+      - command:
+        - /manager
+        image: controller:latest
+        imagePullPolicy: Always
+        name: manager
+        env:
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace

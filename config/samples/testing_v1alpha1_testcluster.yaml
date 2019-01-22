@@ -1,0 +1,6 @@
+apiVersion: testing.argoproj.io/v1alpha1
+kind: TestCluster
+metadata:
+  name: testcluster-sample
+spec:
+  image: kindest/node:v1.13.2

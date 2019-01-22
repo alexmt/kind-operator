@@ -1,0 +1,3 @@
+version: "1"
+domain: argoproj.io
+repo: github.com/argoproj/kind-operator
